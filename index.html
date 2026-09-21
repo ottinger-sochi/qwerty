@@ -17,7 +17,7 @@
       font-family: 'Montserrat', sans-serif;
     }
 
-    /* ТОЧНЫЙ РАЗМЕР КАРТИНКИ ДЛЯ СКРИНШОТА (1200x630) */
+    /* ТОЧНЫЙ РАЗМЕР БАННЕРА 1200x630 */
     .banner-card {
       width: 1200px;
       height: 630px;
@@ -41,7 +41,9 @@
       letter-spacing: 1px;
       color: #111;
     }
+    .logo .dot { color: #FF4D00; margin: 0 4px; }
     .logo span { color: #FF4D00; }
+    
     .badge-city {
       background: #F2F2F4;
       padding: 8px 18px;
@@ -49,17 +51,20 @@
       font-size: 14px;
       font-weight: 800;
       color: #222;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
-    /* Главный оффер */
+    /* Заголовок */
     .title-box {
       text-align: center;
-      margin: 10px 0;
+      margin: 8px 0;
     }
     .main-title {
       font-size: 38px;
       font-weight: 900;
-      line-height: 1.15;
+      line-height: 1.18;
       text-transform: uppercase;
       color: #111;
     }
@@ -69,9 +74,10 @@
       color: #fff;
       padding: 2px 14px;
       border-radius: 10px;
+      display: inline-block;
     }
 
-    /* 4 карточки краш-тестов */
+    /* 4 карточки видео */
     .video-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -79,22 +85,34 @@
     }
     .video-item {
       position: relative;
-      height: 230px;
+      height: 235px;
       border-radius: 16px;
-      background: #232323;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       padding: 14px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+      border: 1px solid #ECECEC;
     }
+
+    /* Затемнение для читаемости */
     .video-item::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.75) 100%);
+      background: linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.85) 100%);
+      z-index: 1;
     }
+
+    /* ОБЛОЖКИ В ФОРМАТЕ .PNG */
+    .card-1 { background-color: #2b2b2b; background-image: url('v1.png'); }
+    .card-2 { background-color: #383838; background-image: url('v2.png'); }
+    .card-3 { background-color: #1f1f1f; background-image: url('v3.png'); }
+    .card-4 { background-color: #2e2e2e; background-image: url('v4.png'); }
 
     .v-tag {
       position: relative;
@@ -119,7 +137,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 15px rgba(255, 77, 0, 0.6);
+      box-shadow: 0 4px 18px rgba(255, 77, 0, 0.7);
       z-index: 2;
     }
     .play-btn svg {
@@ -136,9 +154,10 @@
       font-weight: 800;
       text-transform: uppercase;
       line-height: 1.25;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.6);
     }
 
-    /* Подвал баннера */
+    /* Подвал */
     .bottom-bar {
       display: flex;
       justify-content: space-between;
@@ -146,11 +165,12 @@
       background: #F6F6F8;
       border-radius: 14px;
       padding: 14px 24px;
+      border: 1px solid #EAEAEA;
     }
     .features {
       display: flex;
-      gap: 25px;
-      font-size: 14px;
+      gap: 24px;
+      font-size: 13px;
       font-weight: 800;
       color: #222;
     }
@@ -163,46 +183,52 @@
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
   </style>
 </head>
 <body>
 
-  <!-- ВОТ ЭТОТ БЕЛЫЙ БЛОК НУЖНО ЗАСКРИНИТЬ РОVНО ПО КОНТУРУ -->
   <div class="banner-card">
     
     <div class="header">
-      <div class="logo">OTTINGER <span>SOCHI</span></div>
+      <div class="logo">OTTINGER <span class="dot">•</span> <span>SOCHI</span></div>
       <div class="badge-city">📍 Склад и цех: Сочи, ул. Яна Фабрициуса, 57Б</div>
     </div>
 
     <div class="title-box">
       <h1 class="main-title">
         СДАВАЙТЕ ОБЪЕКТЫ <span class="orange-text">В 3 РАЗА БЫСТРЕЕ</span><br>
-        ПИРОГ ЗА <span class="price-pill">500 ₽/м²</span> БЕЗ СТЕКЛОХОЛСТА
+        ПИРОГ ЗА <span class="price-pill">500 ₽/М²</span> БЕЗ СТЕКЛОХОЛСТА
       </h1>
     </div>
 
     <div class="video-grid">
-      <div class="video-item">
+      <!-- 1 -->
+      <div class="video-item card-1">
         <span class="v-tag">ВИДЕО #01</span>
         <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></svg></div>
         <div class="v-name">Краш-тест: Кофе, вино и пятна</div>
       </div>
 
-      <div class="video-item">
+      <!-- 2 -->
+      <div class="video-item card-2">
         <span class="v-tag">ВИДЕО #02</span>
         <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></svg></div>
         <div class="v-name">Тест-драйв: Ходим по стенам</div>
       </div>
 
-      <div class="video-item">
+      <!-- 3 -->
+      <div class="video-item card-3">
         <span class="v-tag">ВИДЕО #03</span>
         <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></svg></div>
         <div class="v-name">Прочность: Стирается пластик</div>
       </div>
 
-      <div class="video-item">
+      <!-- 4 -->
+      <div class="video-item card-4">
         <span class="v-tag">ВИДЕО #04</span>
         <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></svg></div>
         <div class="v-name">Шпатлевка в трубочку (эластичность)</div>
