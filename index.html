@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Баннер для превью OTTINGER</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: #EAEAEA;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* ТОЧНЫЙ РАЗМЕР КАРТИНКИ ДЛЯ СКРИНШОТА (1200x630) */
+    .banner-card {
+      width: 1200px;
+      height: 630px;
+      background: #FFFFFF;
+      padding: 35px 45px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    }
+
+    /* Шапка */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 26px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      color: #111;
+    }
+    .logo span { color: #FF4D00; }
+    .badge-city {
+      background: #F2F2F4;
+      padding: 8px 18px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 800;
+      color: #222;
+    }
+
+    /* Главный оффер */
+    .title-box {
+      text-align: center;
+      margin: 10px 0;
+    }
+    .main-title {
+      font-size: 38px;
+      font-weight: 900;
+      line-height: 1.15;
+      text-transform: uppercase;
+      color: #111;
+    }
+    .orange-text { color: #FF4D00; }
+    .price-pill {
+      background: #FF4D00;
+      color: #fff;
+      padding: 2px 14px;
+      border-radius: 10px;
+    }
+
+    /* 4 карточки краш-тестов */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .video-item {
+      position: relative;
+      height: 230px;
+      border-radius: 16px;
+      background: #232323;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 14px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+    .video-item::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.75) 100%);
+    }
+
+    .v-tag {
+      position: relative;
+      z-index: 2;
+      align-self: flex-start;
+      background: #FF4D00;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 900;
+      padding: 4px 8px;
+      border-radius: 6px;
+    }
+    .play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 52px;
+      height: 52px;
+      background: #FF4D00;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(255, 77, 0, 0.6);
+      z-index: 2;
+    }
+    .play-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: #fff;
+      margin-left: 3px;
+    }
+    .v-name {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      line-height: 1.25;
+    }
+
+    /* Подвал баннера */
+    .bottom-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #F6F6F8;
+      border-radius: 14px;
+      padding: 14px 24px;
+    }
+    .features {
+      display: flex;
+      gap: 25px;
+      font-size: 14px;
+      font-weight: 800;
+      color: #222;
+    }
+    .cta-badge {
+      background: #FF4D00;
+      color: #fff;
+      padding: 10px 22px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ВОТ ЭТОТ БЕЛЫЙ БЛОК НУЖНО ЗАСКРИНИТЬ РОVНО ПО КОНТУРУ -->
+  <div class="banner-card">
+    
+    <div class="header">
+      <div class="logo">OTTINGER <span>SOCHI</span></div>
+      <div class="badge-city">📍 Склад и цех: Сочи, ул. Яна Фабрициуса, 57Б</div>
+    </div>
+
+    <div class="title-box">
+      <h1 class="main-title">
+        СДАВАЙТЕ ОБЪЕКТЫ <span class="orange-text">В 3 РАЗА БЫСТРЕЕ</span><br>
+        ПИРОГ ЗА <span class="price-pill">500 ₽/м²</span> БЕЗ СТЕКЛОХОЛСТА
+      </h1>
+    </div>
+
+    <div class="video-grid">
+      <div class="video-item">
+        <span class="v-tag">ВИДЕО #01</span>
+        <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></svg></div>
+        <div class="v-name">Краш-тест: Кофе, вино и пятна</div>
+      </div>
+
+      <div class="video-item">
+        <span class="v-tag">ВИДЕО #02</span>
+        <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></svg></div>
+        <div class="v-name">Тест-драйв: Ходим по стенам</div>
+      </div>
+
+      <div class="video-item">
+        <span class="v-tag">ВИДЕО #03</span>
+        <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></svg></div>
+        <div class="v-name">Прочность: Стирается пластик</div>
+      </div>
+
+      <div class="video-item">
+        <span class="v-tag">ВИДЕО #04</span>
+        <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></svg></div>
+        <div class="v-name">Шпатлевка в трубочку (эластичность)</div>
+      </div>
+    </div>
+
+    <div class="bottom-bar">
+      <div class="features">
+        <div>⚡ 3 слоя вместо 15</div>
+        <div>🛡️ 0% трещин и сколов</div>
+        <div>💰 Минус 5 дней сушки</div>
+      </div>
+      <div class="cta-badge">СМОТРЕТЬ КРАШ-ТЕСТЫ ▶</div>
+    </div>
+
+  </div>
+
+</body>
+</html>
