@@ -29,21 +29,40 @@
       box-shadow: 0 20px 50px rgba(0,0,0,0.15);
     }
 
-    /* Шапка */
+    /* Шапка с фирменным логотипом */
     .header {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    .logo {
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
       font-size: 26px;
-      font-weight: 900;
-      letter-spacing: 1px;
-      color: #111;
+      line-height: 1;
     }
-    .logo .dot { color: #FF4D00; margin: 0 4px; }
-    .logo span { color: #FF4D00; }
-    
+    .brand-main {
+      font-weight: 900;
+      color: #111111;
+      letter-spacing: 1.5px;
+    }
+    .brand-dot {
+      color: #FF4D00;
+    }
+    .brand-pipe {
+      color: #FF4D00;
+      font-weight: 400;
+      font-size: 26px;
+      margin: 0 12px;
+    }
+    .brand-sub {
+      color: #6C7077;
+      font-weight: 800;
+      letter-spacing: 4px;
+      font-size: 20px;
+    }
+
     .badge-city {
       background: #F2F2F4;
       padding: 8px 18px;
@@ -108,7 +127,7 @@
       z-index: 1;
     }
 
-    /* ОБЛОЖКИ В ФОРМАТЕ .PNG */
+    /* ОБЛОЖКИ В ФОРМАТЕ PNG */
     .card-1 { background-color: #2b2b2b; background-image: url('v1.png'); }
     .card-2 { background-color: #383838; background-image: url('v2.png'); }
     .card-3 { background-color: #1f1f1f; background-image: url('v3.png'); }
@@ -193,8 +212,13 @@
 
   <div class="banner-card">
     
+    <!-- Шапка с фирменным логотипом -->
     <div class="header">
-      <div class="logo">OTTINGER <span class="dot">•</span> <span>SOCHI</span></div>
+      <div class="brand-logo">
+        <span class="brand-main">OTTINGER<span class="brand-dot">.</span></span>
+        <span class="brand-pipe">|</span>
+        <span class="brand-sub">SOCHI</span>
+      </div>
       <div class="badge-city">📍 Склад и цех: Сочи, ул. Яна Фабрициуса, 57Б</div>
     </div>
 
